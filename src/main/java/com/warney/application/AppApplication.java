@@ -1,5 +1,6 @@
 package com.warney.application;
 
+import com.warney.application.app.AskChampionUseCase;
 import com.warney.application.app.ListChampionsUseCase;
 import com.warney.application.domain.ports.ChampionsRepository;
 import org.springframework.boot.SpringApplication;
@@ -16,6 +17,11 @@ public class AppApplication {
 	@Bean
 	public ListChampionsUseCase provideListChampionsUseCase(ChampionsRepository repository){
 		return new ListChampionsUseCase(repository);
+	}
+
+	@Bean
+	public AskChampionUseCase provideAskChampionUseCase(ChampionsRepository repository){
+		return new AskChampionUseCase(repository);
 	}
 
 }
