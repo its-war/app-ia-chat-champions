@@ -1,6 +1,6 @@
 package com.warney.application.app;
 
-import com.warney.application.domain.model.Champions;
+import com.warney.application.domain.model.Champion;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,7 +9,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import java.util.List;
 
 @SpringBootTest
-public class ListChampionsUseCaseIntegrationTest {
+public class ListChampionUseCaseIntegrationTest {
 
     @Autowired
     private ListChampionsUseCase useCase;
@@ -17,7 +17,7 @@ public class ListChampionsUseCaseIntegrationTest {
     @Test
     public void testListChampionsUseCase() {
 
-        List<Champions> list = useCase.findAll();
+        List<Champion> list = useCase.findAll();
         Assertions.assertEquals(12, list.size());
     }
 }
