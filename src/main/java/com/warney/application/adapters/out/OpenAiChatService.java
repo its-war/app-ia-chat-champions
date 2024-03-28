@@ -36,7 +36,7 @@ public interface OpenAiChatService extends GenerativeAiService {
 
     class Config {
         @Bean
-        public RequestInterceptor apiKeyResquestInterceptor(@Value("${openai.api-key}") String apiKey){
+        public RequestInterceptor apiKeyRequestInterceptor(@Value("${openai.api-key}") String apiKey){
             return requestTemplate -> requestTemplate.header(
                     HttpHeaders.AUTHORIZATION, "Bearer %s".formatted(apiKey)
             );
